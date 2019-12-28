@@ -4,35 +4,30 @@ using UnityEngine;
 
 public class Controller : MonoBehaviour
 {
-    private Rigidbody2D rb;
-    private float moveSpeed = 5;
-    private float JumpSpeed = 5f;
+    private Player player;
 
-    private bool isGrounded = true;
     //Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
-        isGrounded = false;
+        player = new Player(GetComponent<Rigidbody2D>(), false);
     }
 
     // Update is called once per frame
     private void FixedUpdate()
     {
-        rb.velocity = new Vector2(Input.GetAxis("Horizontal") * moveSpeed, rb.velocity.y);
+        player.changeVelocity();
 
-        if(Input.GetButton("Jump") && isGrounded == true)
+        if(Input.GetButton("Jump"))
         {
-            rb.AddForce(new Vector2(0, JumpSpeed), ForceMode2D.Impulse);
-            isGrounded = false;
+            player.jump();
         }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == ("TileMap") && isGrounded == false)
+        if(collision.gameObject.tag == ("TileMap"))
         {
-            isGrounded = true;
+            player.setGrounded(false);
         }
     }
 }
