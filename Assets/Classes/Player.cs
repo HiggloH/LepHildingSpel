@@ -24,10 +24,12 @@ public class Player : MonoBehaviour
 
     public void jump()
     {
+        
         if (isGrounded == true)
         {
             rb.AddForce(new Vector2(0, jumpSpeed), ForceMode2D.Impulse);
             isGrounded = false;
+            
         }
     }
 

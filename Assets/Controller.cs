@@ -10,13 +10,14 @@ public class Controller : MonoBehaviour
     void Start()
     {
         player = new Player(GetComponent<Rigidbody2D>(), false);
+        
     }
 
-    // Update is called once per frame
+    
     private void FixedUpdate()
     {
         player.changeVelocity();
-
+        
         if(Input.GetButton("Jump"))
         {
             player.jump();
@@ -27,7 +28,7 @@ public class Controller : MonoBehaviour
     {
         if(collision.gameObject.tag == ("TileMap"))
         {
-            player.setGrounded(false);
+            player.setGrounded(true);
         }
     }
 }
