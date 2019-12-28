@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class Controller : MonoBehaviour
 {
-    public Rigidbody2D rb;
-    public float moveSpeed = 5;
-    public float JumpSpeed = 2.5f;
+    private Rigidbody2D rb;
+    private float moveSpeed = 5;
+    private float JumpSpeed = 5f;
 
-    public bool isGrounded = true;
-    // Start is called before the first frame update
+    private bool isGrounded = true;
+    //Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        isGrounded = true;
+        isGrounded = false;
     }
 
     // Update is called once per frame
@@ -21,18 +21,17 @@ public class Controller : MonoBehaviour
     {
         rb.velocity = new Vector2(Input.GetAxis("Horizontal") * moveSpeed, rb.velocity.y);
 
-        if(Input.GetButtonDown("Jump") && isGrounded == true)
+        if(Input.GetButton("Jump") && isGrounded == true)
         {
-            rb.AddForce(-Vector2.down * JumpSpeed);
+            rb.AddForce(new Vector2(0, JumpSpeed), ForceMode2D.Impulse);
             isGrounded = false;
         }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "TileMap" && isGrounded == false)
+        if(collision.gameObject.tag == ("TileMap") && isGrounded == false)
         {
-            Debug.Log("YEET");
             isGrounded = true;
         }
     }
