@@ -22,6 +22,7 @@ public class Controller : MonoBehaviour
         {
             player.jump();
         }
+        
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -31,4 +32,6 @@ public class Controller : MonoBehaviour
             player.setGrounded(true);
         }
     }
+
+    
 }

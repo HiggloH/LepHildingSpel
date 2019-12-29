@@ -8,13 +8,14 @@ public class Player : MonoBehaviour
     public float moveSpeed;
     public float jumpSpeed;
     public bool isGrounded;
+    public static bool dead;
 
     public Player(Rigidbody2D rigidbody, bool grounded)
     {
         rb = rigidbody;
         isGrounded = grounded;
         moveSpeed = 5f;
-        jumpSpeed = 5f;
+        jumpSpeed = 5.5f;
     }
 
     public void changeVelocity()
@@ -38,4 +39,5 @@ public class Player : MonoBehaviour
         isGrounded = grounded;
     }
 
+    
 }
