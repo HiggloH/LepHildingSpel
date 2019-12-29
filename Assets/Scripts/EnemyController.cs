@@ -4,13 +4,17 @@ using UnityEngine;
     
 public class EnemyController : MonoBehaviour
 {
+    public float MoveSpeed = 5f;
 
-    public GameObject player;
-    
+    private GameObject player;
+    private Rigidbody2D rb;
+
+    private bool wallTrigger;
     // Start is called before the first frame update
     void Start()
     {
-        
+        rb = GetComponent<Rigidbody2D>();
+        player = GameObject.Find("Player");
     }
 
     // Update is called once per frame
@@ -26,5 +30,9 @@ public class EnemyController : MonoBehaviour
             Destroy(player);
             Player.dead = true;
         }
+
+       
     }
+
+   
 }
