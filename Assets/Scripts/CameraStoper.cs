@@ -22,6 +22,6 @@ public class CameraStoper : MonoBehaviour
             Destroy(rb);
         }
 
-        //rb.velocity = new Vector2 (2, 0);
+        rb.velocity = new Vector2 (2, 0);
     }
 }

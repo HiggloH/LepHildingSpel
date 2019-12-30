@@ -5,6 +5,7 @@ using UnityEngine;
 public class GBController : MonoBehaviour
 {
     private GingerBreadEnemy gb;
+    
     void Start()
     {
         gb = new GingerBreadEnemy(GetComponent<Rigidbody2D>());
@@ -14,5 +15,14 @@ public class GBController : MonoBehaviour
     void Update()
     {
         gb.move("left");
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Player")
+        {
+            Destroy(collision.gameObject);
+            Player.dead = true;
+        }
     }
 }
