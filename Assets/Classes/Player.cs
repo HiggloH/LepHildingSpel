@@ -15,7 +15,7 @@ public class Player : MonoBehaviour
         rb = rigidbody;
         isGrounded = grounded;
         moveSpeed = 5f;
-        jumpSpeed = 5.5f;
+        jumpSpeed = 8f;
     }
 
     public void changeVelocity()
@@ -26,12 +26,11 @@ public class Player : MonoBehaviour
     public void jump()
     {
         
-        if (isGrounded == true)
-        {
+        
             rb.AddForce(new Vector2(0, jumpSpeed), ForceMode2D.Impulse);
             isGrounded = false;
             
-        }
+        
     }
 
     public void setGrounded(bool grounded)
@@ -39,5 +38,12 @@ public class Player : MonoBehaviour
         isGrounded = grounded;
     }
 
-    
+    public bool getGrounded()
+    {
+        return isGrounded;
+    }
+    public void setJumpHeight(float height)
+    {
+        jumpSpeed = height;
+    }
 }

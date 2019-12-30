@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class CameraStoper : MonoBehaviour
 {
-    private ConstantForce2D cf;
+    
     private Rigidbody2D rb;
     // Start is called before the first frame update
     void Start()
     {
-        cf = GetComponent<ConstantForce2D>();
+        
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -19,8 +19,9 @@ public class CameraStoper : MonoBehaviour
         
         if (Player.dead)
         {
-            Destroy(cf);
             Destroy(rb);
         }
+
+        //rb.velocity = new Vector2 (2, 0);
     }
 }

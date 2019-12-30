@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Controller : MonoBehaviour
 {
-    private Player player;
+    public Player player;
 
     //Start is called before the first frame update
     void Start()
@@ -20,7 +20,10 @@ public class Controller : MonoBehaviour
         
         if(Input.GetButton("Jump"))
         {
-            player.jump();
+            if (player.getGrounded() == true)
+            {
+                player.jump();
+            }
         }
         
     }
@@ -30,6 +33,20 @@ public class Controller : MonoBehaviour
         if(collision.gameObject.tag == ("TileMap"))
         {
             player.setGrounded(true);
+        }
+        if (collision.gameObject.tag == ("Enemy"))
+        {
+            player.jump(); 
+
+        }
+        if(collision.gameObject.tag == ("ColliderOfDeath"))
+        {
+            Destroy(gameObject);
+            Player.dead = true;
+        }
+        if(collision.gameObject.tag == "PowerUp1")
+        {
+            player.setJumpHeight(11);
         }
     }
 
