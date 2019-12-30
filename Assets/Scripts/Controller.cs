@@ -47,6 +47,7 @@ public class Controller : MonoBehaviour
         if(collision.gameObject.tag == "PowerUp1")
         {
             player.setJumpHeight(11);
+            Destroy(collision.gameObject);
         }
     }
 

@@ -9,7 +9,7 @@ TextureImporter:
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
-    sRGBTexture: 0
+    sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
     borderMipMap: 0
@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: -1
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 25
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -91,7 +91,7 @@ TextureImporter:
         serializedVersion: 2
         x: 20
         y: 86
-        width: 25
+        width: 24
         height: 25
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -100,7 +100,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ba0c0deb6ecc28946835dcc0d2343ce7
+      spriteID: 5e5ffb2c363400f418e368509c064e40
       vertices: []
       indices: 
       edges: []
@@ -120,7 +120,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6c39fd7aee9cb1640b2aca6ed4343276
+      spriteID: cd4046bdecc086b43b89bee712ab0470
       vertices: []
       indices: 
       edges: []
@@ -128,7 +128,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5955bdbd3c8fed3439deaac5b1dd7bb9
+    spriteID: d23457bd7bbed7441aafc753c79af389
     vertices: []
     indices: 
     edges: []
