@@ -8,13 +8,14 @@ public class EnemyController : MonoBehaviour
 
     private GameObject player;
     private Rigidbody2D rb;
-
+    private Animator anim;
     
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         player = GameObject.Find("Player");
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -29,6 +30,7 @@ public class EnemyController : MonoBehaviour
         {
             Destroy(player);
             Player.dead = true;
+            anim.SetBool("die", true);
         }
 
        
