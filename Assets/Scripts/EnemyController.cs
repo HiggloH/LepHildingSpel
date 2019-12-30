@@ -9,7 +9,7 @@ public class EnemyController : MonoBehaviour
     private GameObject player;
     private Rigidbody2D rb;
 
-    private bool wallTrigger;
+    
     // Start is called before the first frame update
     void Start()
     {

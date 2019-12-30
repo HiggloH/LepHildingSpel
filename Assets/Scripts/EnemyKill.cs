@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyKill : MonoBehaviour
 {
     private GameObject Enemy;
-
+    
     public Vector2 offset;
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -14,6 +14,7 @@ public class EnemyKill : MonoBehaviour
         {
             Destroy(Enemy);
             Destroy(gameObject);
+            
         } 
     }
 
@@ -24,5 +25,7 @@ public class EnemyKill : MonoBehaviour
     private void Awake()
     {
         Enemy = GameObject.Find("Enemy1");
+        
+        
     }
 }
