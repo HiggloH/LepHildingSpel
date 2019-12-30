@@ -20,7 +20,10 @@ public class Controller : MonoBehaviour
         
         if(Input.GetButton("Jump"))
         {
-            player.jump();
+            if (player.getGrounded() == true)
+            {
+                player.jump();
+            }
         }
         
     }

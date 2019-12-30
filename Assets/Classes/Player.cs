@@ -25,18 +25,18 @@ public class Player : MonoBehaviour
 
     public void jump()
     {
-        
-        if (isGrounded == true)
-        {
-            rb.AddForce(new Vector2(0, jumpSpeed), ForceMode2D.Impulse);
-            isGrounded = false;
-            
-        }
+        rb.AddForce(new Vector2(0, jumpSpeed), ForceMode2D.Impulse);
+        isGrounded = false;
     }
 
     public void setGrounded(bool grounded)
     {
         isGrounded = grounded;
+    }
+
+    public bool getGrounded()
+    {
+        return isGrounded;
     }
 
     
