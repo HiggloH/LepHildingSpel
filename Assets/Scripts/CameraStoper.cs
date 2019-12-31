@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CameraStoper : MonoBehaviour
 {
-    
+    public static bool move;
     private Rigidbody2D rb;
     // Start is called before the first frame update
     void Start()
@@ -21,7 +21,9 @@ public class CameraStoper : MonoBehaviour
         {
             Destroy(rb);
         }
-
-        rb.velocity = new Vector2 (2, 0);
+        if (move)
+        {
+            rb.velocity = new Vector2(3.5f, 0);
+        }
     }
 }

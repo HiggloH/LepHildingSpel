@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class Controller : MonoBehaviour
@@ -33,6 +34,7 @@ public class Controller : MonoBehaviour
         if(collision.gameObject.tag == ("TileMap"))
         {
             player.setGrounded(true);
+            CameraStoper.move = true;
         }
         if (collision.gameObject.tag == ("Enemy"))
         {
@@ -48,6 +50,10 @@ public class Controller : MonoBehaviour
         {
             player.setJumpHeight(11);
             Destroy(collision.gameObject);
+        }
+        if(collision.gameObject.tag == "Win")
+        {
+            SceneManager.LoadScene("Victory");
         }
     }
 
