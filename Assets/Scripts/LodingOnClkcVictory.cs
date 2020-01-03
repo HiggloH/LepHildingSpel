@@ -11,9 +11,9 @@ public class LodingOnClkcVictory : MonoBehaviour
             Application.LoadLevel(level);
             Player.Win1 = true;
         }
-        if (Player.Win1)
+        else
         {
-            Debug.Log("Level3");
+            Application.LoadLevel("Level3");
         }
     }
 }

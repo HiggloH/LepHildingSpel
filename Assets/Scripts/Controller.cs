@@ -6,13 +6,15 @@ using UnityEngine;
 public class Controller : MonoBehaviour
 {
     public Player player;
-    
+    private int nextSceneToLoad;
+
     //Start is called before the first frame update
     void Start()
     {
         player = new Player(GetComponent<Rigidbody2D>(), false);
-        
+        nextSceneToLoad = SceneManager.GetActiveScene().buildIndex + 1;
     }
+    
 
     
     private void FixedUpdate()
@@ -53,7 +55,7 @@ public class Controller : MonoBehaviour
         }
         if(collision.gameObject.tag == "Win")
         {
-            SceneManager.LoadScene("Victory");
+            SceneManager.LoadScene(nextSceneToLoad);
         }
     }
 
