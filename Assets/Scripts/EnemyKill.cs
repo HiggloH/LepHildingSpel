@@ -26,6 +26,6 @@ public class EnemyKill : MonoBehaviour
     {
         Enemy = GameObject.Find("Enemy1");
         
-        
+
     }
 }

@@ -5,6 +5,7 @@ using UnityEngine;
 public class PowerUpController : MonoBehaviour
 {
     public bool spawn;
+    public bool powerUps;
 
     public GameObject PowerUp;
     public Transform spawnHere;

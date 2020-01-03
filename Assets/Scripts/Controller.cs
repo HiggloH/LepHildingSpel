@@ -6,7 +6,7 @@ using UnityEngine;
 public class Controller : MonoBehaviour
 {
     public Player player;
-
+    
     //Start is called before the first frame update
     void Start()
     {
