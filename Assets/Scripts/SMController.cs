@@ -4,15 +4,39 @@ using UnityEngine;
 
 public class SMController : MonoBehaviour
 {
-    // Start is called before the first frame update
+    private SnowManEnemy sm;
+    private float direction; 
     void Start()
     {
-        
+        sm = new SnowManEnemy(GetComponent<Rigidbody2D>());
+        direction = MainController.directions["left"];
     }
-
-    // Update is called once per frame
     void Update()
     {
-        
+        sm.move(direction);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            Destroy(collision.gameObject);
+            Player.dead = true;
+        }
+        if(collision.gameObject.tag == "Edge")
+        {
+            Debug.Log("edge collided");
+            direction = direction * -1;
+        }
+    }
+
+    public float getDirection()
+    {
+        return direction;
+    }
+
+    public void setDirection(float f)
+    {
+        direction = f;
     }
 }

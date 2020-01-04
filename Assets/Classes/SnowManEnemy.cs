@@ -13,9 +13,9 @@ public class SnowManEnemy : Controller
         moveSpeed = 2.5f;
     }
 
-    public void move(string dir)
+    public void move(float dir)
     {
-        rb.velocity = new Vector2(MainController.directions[dir] * moveSpeed, rb.velocity.y);
+        rb.velocity = new Vector2(dir * moveSpeed, rb.velocity.y);
     }
 }
 

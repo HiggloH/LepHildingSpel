@@ -6,8 +6,6 @@ public class GBController : MonoBehaviour
 {
     private GingerBreadEnemy gb;
 
-    
-
     void Start()
     {
         gb = new GingerBreadEnemy(GetComponent<Rigidbody2D>());
@@ -26,10 +24,6 @@ public class GBController : MonoBehaviour
         {
             Destroy(collision.gameObject);
             Player.dead = true;
-        }
-        else if(collision.gameObject.tag == "Player")
-        {
-            
         }
     }
 }
