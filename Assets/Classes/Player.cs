@@ -17,7 +17,7 @@ public class Player : MonoBehaviour
         rb = rigidbody;
         isGrounded = grounded;
         moveSpeed = 5f;
-        jumpSpeed = 6.5f;
+        jumpSpeed = 7f;
     }
 
     public void changeVelocity()

@@ -29,7 +29,6 @@ public class SMController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Edge")
         {
-            Debug.Log("edge collided");
             direction = direction * -1;
         }
     }
