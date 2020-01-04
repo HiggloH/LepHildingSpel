@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public Rigidbody2D rb;
-    public float moveSpeed;
-    public float jumpSpeed;
+    private Rigidbody2D rb;
+    private float moveSpeed;
+    private float jumpSpeed;
+    private string facingDirection;
     public bool isGrounded;
     public static bool dead;
     
@@ -17,7 +18,8 @@ public class Player : MonoBehaviour
         rb = rigidbody;
         isGrounded = grounded;
         moveSpeed = 5f;
-        jumpSpeed = 6.5f;
+        jumpSpeed = 7f;
+        facingDirection = "left";
     }
 
     public void changeVelocity()
@@ -47,5 +49,15 @@ public class Player : MonoBehaviour
     public void turn(GameObject player)
     {
         player.transform.Rotate(0, 180, 0);
+    }
+    
+    public void setDirection(string s)
+    {
+        facingDirection = s;
+    }
+
+    public string getDirection()
+    {
+        return facingDirection;
     }
 }
