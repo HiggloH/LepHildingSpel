@@ -20,7 +20,10 @@ public class Controller : MonoBehaviour
     private void FixedUpdate()
     {
         player.changeVelocity();
-        
+        if(Input.GetKeyDown("a") || Input.GetKeyDown("d"))
+        {
+            player.turn(gameObject);
+        }
         if(Input.GetButton("Jump"))
         {
             if (player.getGrounded() == true)

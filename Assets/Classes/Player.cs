@@ -44,4 +44,8 @@ public class Player : MonoBehaviour
     {
         jumpSpeed = height;
     }
+    public void turn(GameObject player)
+    {
+        player.transform.Rotate(0, 180, 0);
+    }
 }
