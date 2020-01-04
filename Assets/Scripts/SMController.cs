@@ -23,7 +23,11 @@ public class SMController : MonoBehaviour
             Destroy(collision.gameObject);
             Player.dead = true;
         }
-        if(collision.gameObject.tag == "Edge")
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Edge")
         {
             Debug.Log("edge collided");
             direction = direction * -1;
