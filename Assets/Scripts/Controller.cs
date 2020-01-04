@@ -20,11 +20,20 @@ public class Controller : MonoBehaviour
     private void FixedUpdate()
     {
         player.changeVelocity();
-        if(Input.GetKeyDown("a") || Input.GetKeyDown("d"))
+
+        if(Input.GetKeyDown("d") && player.getDirection() != "left")
         {
             player.turn(gameObject);
+            player.setDirection("left");
         }
-        if(Input.GetButton("Jump"))
+
+        else if (Input.GetKeyDown("a") && player.getDirection() != "right")
+        {
+            player.turn(gameObject);
+            player.setDirection("right");
+        }
+
+        if (Input.GetButton("Jump"))
         {
             if (player.getGrounded() == true)
             {
