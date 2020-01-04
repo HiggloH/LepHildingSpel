@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyKill : MonoBehaviour
 {
-    private GameObject Enemy;
+    public GameObject Enemy;
     
     public Vector2 offset;
 
@@ -22,10 +22,5 @@ public class EnemyKill : MonoBehaviour
     {
         transform.position = Enemy.transform.TransformPoint(offset);
     }   
-    private void Awake()
-    {
-        Enemy = GameObject.Find("Enemy1");
-        
-
-    }
+    
 }
