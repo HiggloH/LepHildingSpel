@@ -6,8 +6,6 @@ public class GBController : MonoBehaviour
 {
     private GingerBreadEnemy gb;
 
-    
-
     void Start()
     {
         gb = new GingerBreadEnemy(GetComponent<Rigidbody2D>());

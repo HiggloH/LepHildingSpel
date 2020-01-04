@@ -9,6 +9,7 @@ TagManager:
   - ColliderOfDeath
   - PowerUp1
   - Win
+  - Edge
   layers:
   - Default
   - TransparentFX
