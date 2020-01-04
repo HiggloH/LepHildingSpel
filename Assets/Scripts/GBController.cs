@@ -27,9 +27,9 @@ public class GBController : MonoBehaviour
             Destroy(collision.gameObject);
             Player.dead = true;
         }
-        else if(collision.gameObject.tag == "Player")
+        if(collision.gameObject.tag == ("ColliderOfDeath"))
         {
-            
+            Destroy(gameObject);
         }
     }
 }
