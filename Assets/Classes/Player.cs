@@ -10,7 +10,6 @@ public class Player : MonoBehaviour
     public bool isGrounded;
     public static bool dead;
     public static bool Win1;
-    public static bool Win2;
 
     public Player(Rigidbody2D rigidbody, bool grounded)
     {
