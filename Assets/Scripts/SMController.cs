@@ -23,6 +23,10 @@ public class SMController : MonoBehaviour
             Destroy(collision.gameObject);
             Player.dead = true;
         }
+        if(collision.gameObject.tag == "ColliderOfDeath")
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
