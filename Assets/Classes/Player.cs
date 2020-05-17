@@ -16,6 +16,7 @@ public class Player : MonoBehaviour
     public Player(Rigidbody2D rigidbody, bool grounded)
     {
         rb = rigidbody;
+        
         isGrounded = grounded;
         moveSpeed = 5f;
         jumpSpeed = 7f;
@@ -25,6 +26,7 @@ public class Player : MonoBehaviour
     public void changeVelocity()
     {
         rb.velocity = new Vector2(Input.GetAxis("Horizontal") * moveSpeed, rb.velocity.y);
+        
     }
 
     public void jump()
@@ -55,7 +57,7 @@ public class Player : MonoBehaviour
     {
         facingDirection = s;
     }
-
+    
     public string getDirection()
     {
         return facingDirection;

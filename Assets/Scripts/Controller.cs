@@ -14,13 +14,14 @@ public class Controller : MonoBehaviour
         player = new Player(GetComponent<Rigidbody2D>(), false);
         nextSceneToLoad = SceneManager.GetActiveScene().buildIndex + 1;
     }
-    
 
-    
+
+
     private void FixedUpdate()
     {
         player.changeVelocity();
 
+        
         if(Input.GetKeyDown("d") && player.getDirection() != "left")
         {
             player.turn(gameObject);

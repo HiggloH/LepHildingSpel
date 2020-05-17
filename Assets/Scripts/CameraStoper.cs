@@ -23,7 +23,7 @@ public class CameraStoper : MonoBehaviour
         }
         if (move)
         {
-            //rb.velocity = new Vector2(3.5f, 0);
+            rb.velocity = new Vector2(3.5f, 0);
         }
     }
 }
